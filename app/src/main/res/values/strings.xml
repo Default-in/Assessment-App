@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Assessment App</string>
+    <string name="welcome_message">Welcome To Default</string>
+    <string name="enter_email_message">Enter your email to continue</string>
+    <string name="email_hint_message">Email</string>
+    <string name="login_button_string">LOGIN</string>
+    <string name="email_autofill_hint">\@gmail.com</string>
+    <string name="email_error_msg">The email you entered isn’t registered, please contact your recruiter.</string>
 </resources>
