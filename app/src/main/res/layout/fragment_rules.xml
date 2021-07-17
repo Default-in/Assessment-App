@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="rulesViewModel"
+            type="com.getdefault.assessmentapp.rules_module.RulesViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_background"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/tv_rules_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sansation_bold"
+            android:text="@string/rules_screen_heading"
+            android:textAlignment="center"
+            android:textColor="@color/simple_black"
+            android:textSize="@dimen/heading_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="@dimen/normal_padding"
+            android:src="@drawable/ic_send"
+            app:layout_constraintBottom_toBottomOf="@id/tv_rules_heading"
+            app:layout_constraintLeft_toRightOf="@id/tv_rules_heading"
+            app:layout_constraintTop_toTopOf="@id/tv_rules_heading" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_rules_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/btn_start_quiz"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_rules_heading"
+            tools:listitem="@layout/rules_item" />
+
+        <Button
+            android:id="@+id/btn_start_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/sansation_bold"
+            android:text="@string/start_quiz_btn_string"
+            android:textColor="@color/white"
+            android:textSize="@dimen/normal_font_size"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
