@@ -6,4 +6,20 @@
     <string name="login_button_string">LOGIN</string>
     <string name="email_autofill_hint">\@gmail.com</string>
     <string name="email_error_msg">The email you entered isn’t registered, please contact your recruiter.</string>
+    <string name="rules_screen_heading">Getting Started</string>
+    <string name="start_quiz_btn_string">Start Quiz</string>
+    <string name="quiz_completed_thank_msg">Thank you for taking the quiz, you will soon receive an email from our recruitment team</string>
+    <string name="log_out_btn">Log out</string>
+    <string name="quiz_completed_msg">Quiz Completed</string>
+
+    <array name="rules_list">
+        <item>Each question will have it’s own countdown timer.</item>
+        <item>The countdown timer is located on the top right corner of the screen.</item>
+        <item>Once the timer runs out, you cannot answer that question.</item>
+        <item>Each question will have 4 options, out of which one will be correct.</item>
+        <item>Once a question is answered, you cannot change your option.</item>
+        <item>There is no negative marketing.</item>
+        <item>After choosing an option, press submit to submit your answer.</item>
+        <item>Once a question is answered, press next to move to next question.</item>
+    </array>
 </resources>

@@ -1,21 +1,12 @@
 package com.getdefault.assessmentapp.login_module
 
 import android.app.Application
+import android.text.Editable
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
-
-    private val _email = MutableLiveData<String>()
-    val email : LiveData<String>
-        get() = _email
-
-
-    private val _loginBtnPressed = MutableLiveData(false)
-    val loginBtnPressed : LiveData<Boolean>
-        get() = _loginBtnPressed
-
 
     private val _loginError = MutableLiveData(false)
     val loginError : LiveData<Boolean>
@@ -27,8 +18,18 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         get() = _loginSuccessful
 
 
-    fun login(){
+    fun login(email: String){
+        if(email == "saurav.kalsoor@gmail.com"){
+            _loginSuccessful.value = true
+            _loginError.value = false
+        }else{
+            _loginError.value = true
+        }
 
+    }
+
+    fun onFinishedLogin(){
+        _loginSuccessful.value = false
     }
 }
 
