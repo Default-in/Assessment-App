@@ -15,5 +15,13 @@
     <fragment
         android:id="@+id/rulesFragment"
         android:name="com.getdefault.assessmentapp.rules_module.RulesFragment"
-        android:label="RulesFragment" />
+        android:label="RulesFragment" >
+        <action
+            android:id="@+id/action_rulesFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.getdefault.assessmentapp.quiz_module.QuizFragment"
+        android:label="QuizFragment" />
 </navigation>
