@@ -11,6 +11,7 @@
     <string name="quiz_completed_thank_msg">Thank you for taking the quiz, you will soon receive an email from our recruitment team</string>
     <string name="log_out_btn">Log out</string>
     <string name="quiz_completed_msg">Quiz Completed</string>
+    <string name="btn_submit">Submit</string>
 
     <array name="rules_list">
         <item>Each question will have it’s own countdown timer.</item>

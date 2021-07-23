@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.getdefault.assessmentapp.R
 import com.getdefault.assessmentapp.databinding.FragmentRulesBinding
@@ -31,6 +32,11 @@ class RulesFragment : Fragment() {
         val rulesList = resources.getStringArray(R.array.rules_list)
         val adapter = RulesListAdapter(rulesList)
         binding.rvRulesList.adapter = adapter
+
+
+        binding.btnStartQuiz.setOnClickListener {
+            findNavController().navigate(RulesFragmentDirections.actionRulesFragmentToQuizFragment())
+        }
 
 
         return binding.root

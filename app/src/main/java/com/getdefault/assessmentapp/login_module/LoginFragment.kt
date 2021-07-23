@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -18,15 +19,16 @@ class LoginFragment : Fragment() {
         ViewModelProvider(this, LoginViewModelProvider(activity.application)).get(LoginViewModel::class.java)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        val binding = FragmentLoginBinding.inflate(inflater)
+    private lateinit var binding: FragmentLoginBinding
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentLoginBinding.inflate(inflater)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.loginViewModel = loginViewModel
 
 
-
         binding.btnLogin.setOnClickListener {
+            showProgressBar()
             val email = binding.etEmail.text.toString()
             loginViewModel.login(email)
         }
@@ -34,8 +36,10 @@ class LoginFragment : Fragment() {
 
         loginViewModel.loginError.observe(viewLifecycleOwner, {
             it?.let {
+                hideProgressBar()
                 if(it){
                     binding.tvAuthenticationErrorMsg.visibility = View.VISIBLE
+
                 }else{
                     binding.tvAuthenticationErrorMsg.visibility = View.GONE
                 }
@@ -44,6 +48,7 @@ class LoginFragment : Fragment() {
 
         loginViewModel.loginSuccessful.observe(viewLifecycleOwner, {
             it?.let {
+                hideProgressBar()
                 if(it){
                     Toast.makeText(activity, "Login SuccessFul", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToRulesFragment())
@@ -54,4 +59,14 @@ class LoginFragment : Fragment() {
 
         return binding.root
     }
+
+
+    private fun showProgressBar(){
+        binding.pbLoading.visibility = View.VISIBLE
+    }
+
+    private fun hideProgressBar(){
+        binding.pbLoading.visibility = View.INVISIBLE
+    }
+
 }
